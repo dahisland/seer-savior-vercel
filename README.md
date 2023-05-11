@@ -7,7 +7,7 @@
   <img src="./readme-assets/logo.png" width="200"/>
 </div>
 
-# SEER SAVIOR BACKEND API
+# SEER SAVIOR MERN PROJECT
 
 Seer savior is a small web memory and deduction game developed in mobile first.
 In this first version, the player must guess the expected answer using as few clues as possible to obtain the best possible score.
@@ -34,11 +34,8 @@ This project allowed me to learn how to create a MERN application, and thus unde
 - multer
 - validator
 - cloudinary
+- React
 
-## LINKS
+## DEPLOYMENT
 
-Application is available here : https://seer-savior.vercel.app
-<br/>
-Repo front-end : https://github.com/dahisland/seer-savior
-<br/>
-Repo API : https://github.com/dahisland/seer-savior-backend
+This application has been deployed on Vercel. You can consult it here : https://seer-savior.vercel.app
