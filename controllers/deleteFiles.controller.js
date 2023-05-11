@@ -19,7 +19,7 @@ export const deleteFilesUploaded = (req, res, next) => {
           .delete_resources([req.params.id + "/" + fileName])
           .then((result) => {
             console.log(result);
-            user.picture = "https://i.ibb.co/rxjCqSn/default-avatar.png";
+            user.picture = "https://i.ibb.co/YBHsp5k/default-avatar.png";
             user
               .save()
               .then((userUpdated) => {
