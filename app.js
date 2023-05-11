@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import path from "path";
-import { fileURLToPath } from "url";
 import userRoutes from "./routes/user.routes.js";
 import rankingRoutes from "./routes/ranking.routes.js";
 import avatarRoutes from "./routes/avatar.routes.js";
@@ -12,8 +11,6 @@ import {
   statusUserToken,
 } from "./middleware/auth.middleware.js";
 import cors from "cors";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Configure path for process.env file config
 dotenv.config({ path: "./config/.env" });

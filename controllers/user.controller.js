@@ -1,12 +1,13 @@
 import User from "../models/User.model.js";
 import { signupErrors } from "../utils/user.errors.js";
-import path from "path";
-import { fileURLToPath } from "url";
-import fs from "fs";
+import { v2 as cloudinary } from "cloudinary";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const filesFolder = `${__dirname}/../client/public/images/avatars/`;
-const filesBuildFolder = `${__dirname}/../client/build/images/avatars/`;
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_KEY,
+  api_secret: process.env.CLOUD_SECRET,
+  secure: true,
+});
 
 // GET ALL USERS
 export const getAllUsers = (req, res, next) => {
@@ -282,33 +283,10 @@ export const deleteUser = (req, res, next) => {
       if (user === null) {
         throw Error(`User with id : ${req.params.id} not found`);
       } else {
-        const filesToDelete = [];
-        const filesInFolder = fs.readdirSync(filesFolder);
-        const filesInBuildFolder = fs.readdirSync(filesBuildFolder);
-
-        filesInFolder.forEach((file) => {
-          const fileName = path.parse(file).name;
-          if (fileName === "custom-avatar-" + req.params.id) {
-            filesToDelete.push(file);
-          }
-        });
-        filesInBuildFolder.forEach((file) => {
-          const fileName = path.parse(file).name;
-          if (fileName === "custom-avatar-" + req.params.id) {
-            filesToDelete.push(file);
-          }
-        });
-
-        if (filesToDelete.length !== 0) {
-          filesToDelete.forEach((file) => {
-            fs.unlink(filesFolder + file, (err) => {
-              if (err) console.log(err);
-            });
-            fs.unlink(filesBuildFolder + file, (err) => {
-              if (err) console.log(err);
-            });
-          });
-        }
+        const fileName = "custom-avatar-" + req.params.id;
+        cloudinary.api
+          .delete_resources([req.params.id + "/" + fileName])
+          .then((result) => console.log(result));
         res
           .cookie("jwt", "", { maxAge: 1 })
           .status(200)

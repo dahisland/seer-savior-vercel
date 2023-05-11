@@ -1,26 +1,8 @@
 import multer from "multer";
-import path from "path";
-import { fileURLToPath } from "url";
 import { multerErrors } from "../utils/multer.errors.js";
-import mongoose from "mongoose";
-
-const ObjectID = mongoose.Types.ObjectId;
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Multer storage parameters (indicate folder destination storage and rename file by using the unique user pseudo
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    console.log(__dirname);
-    cb(null, `${__dirname}/../client/public/images/avatars/`);
-    cb(null, `${__dirname}/../client/build/images/avatars/`);
-  },
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      "custom-avatar-" + req.params.id + "." + file.mimetype.split("/")[1]
-    );
-  },
-});
+const storage = multer.memoryStorage();
 
 // Multer filter parameters. File will be stored only if format is correct and pseudo is given in the request
 function fileFilter(req, file, cb) {
