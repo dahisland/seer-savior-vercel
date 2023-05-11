@@ -36,7 +36,7 @@ This project allowed me to learn how to create a MERN application, and thus unde
 
 ## LINKS
 
-Application is available here : https://seer-savior.herokuapp.com
+Application is available here : https://seer-savior.vercel.app
 <br/>
 Repo front-end : https://github.com/dahisland/seer-savior
 <br/>
