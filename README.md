@@ -33,6 +33,7 @@ This project allowed me to learn how to create a MERN application, and thus unde
 - cookie-parser
 - multer
 - validator
+- cloudinary
 
 ## LINKS
 
