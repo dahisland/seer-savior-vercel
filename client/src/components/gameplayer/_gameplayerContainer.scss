@@ -1,0 +1,249 @@
+@import "../../style/utils";
+
+@include animShakeScaleButton;
+
+@keyframes animPreloadGame {
+  0% {
+    opacity: 1;
+    z-index: 999;
+  }
+  99% {
+    opacity: 0;
+    z-index: 999;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.animation-preload-game {
+  position: absolute;
+  background-image: url("../../assets/background-player.jpg");
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: map-get($colors, lagoon);
+  animation: 800ms ease-in-out 700ms forwards animPreloadGame;
+}
+
+.gameplayer_container {
+  width: 100%;
+  height: 680px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background-image: url("../../assets/background-player.jpg");
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  @include responsiveTabloids {
+    height: 650px;
+  }
+  @include responsiveDesktop {
+    height: 570px;
+  }
+}
+
+@keyframes darkenBackground {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+@keyframes lightenBackground {
+  from {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+.gameplayer_container--darken {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation: darkenBackground 600ms ease-in-out forwards;
+}
+.gameplayer_container--lighten {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation: lightenBackground 600ms ease-in-out forwards;
+}
+
+.gameplayer_content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 1rem;
+  padding-bottom: 2.5rem;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: map-get($colors, ice);
+  @include responsiveTabloids {
+    width: 80%;
+    padding-bottom: inherit;
+    padding: 1rem;
+  }
+  @include responsiveDesktop {
+    width: 70%;
+  }
+}
+
+.chooseLevel--icon {
+  @include glutenFont;
+  font-size: 0.8rem;
+  font-weight: 700;
+  width: 125px;
+  cursor: pointer;
+  background-color: lighten(map-get($colors, lagoon), 20%);
+  padding: 0.5rem;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%) scale(1) rotate(0deg);
+  color: map-get($colors, mauve);
+  z-index: 200;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    transform: translateX(-50%) scale(1.05) rotate(-7deg);
+    outline: 2px solid map-get($colors, ice);
+    color: map-get($colors, fire);
+    background-color: map-get($colors, mauve);
+  }
+  @include responsiveTabloids {
+    left: inherit;
+    right: 1rem;
+    transform: inherit;
+    &:hover {
+      animation: shakeScaleButton 400ms ease-in-out forwards;
+      outline: 2.5px solid map-get($colors, ice);
+      color: map-get($colors, fire);
+      background-color: map-get($colors, mauve);
+    }
+  }
+}
+
+.link_logModale {
+  cursor: pointer;
+  opacity: 0.8;
+  width: 100%;
+  font-size: 0.8rem;
+  padding: 0 0.5rem;
+  color: map-get($colors, fire);
+  @include glutenFont;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  &:hover {
+    text-decoration: underline;
+  }
+  @include responsiveTabloids {
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes animOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.icon--stopGame {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 20px;
+  color: map-get($colors, ice);
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: lighten(map-get($colors, lagoon), 20%);
+  animation: animOpacity 600ms ease-in-out forwards;
+  transition: all 400ms ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    color: lighten(map-get($colors, lagoon), 20%);
+    background-color: map-get($colors, ice);
+  }
+  @include responsiveTabloids {
+    top: 1rem;
+    right: 1rem;
+    font-size: 30px;
+  }
+}
+
+.level_button {
+  cursor: pointer;
+  width: 180px;
+  border-radius: 50%;
+  @include logoFont;
+  padding: 1rem 0.5rem;
+  color: map-get($colors, ice);
+  background-color: lighten(map-get($colors, fire), 0%);
+  border: 5px solid lighten(map-get($colors, ice), 20%);
+  font-size: 1.1rem;
+  font-weight: 700;
+  transform: scale(1) rotate(0deg);
+  transition: all 300ms ease-in-out;
+  margin-bottom: 1rem;
+  &:hover {
+    background-color: lighten(map-get($colors, fire), 20%);
+    color: map-get($colors, lagoon);
+    transform: scale(1.1) rotate(-10deg);
+  }
+  @include responsiveTabloids {
+    width: 200px;
+    font-size: 1.2rem;
+  }
+}
+
+.level_text {
+  padding: 0.2rem 0.6rem;
+  p {
+    @include typewriterFont;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 0.7rem 0;
+  }
+  @include responsiveTabloids {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.icon--playgame {
+  margin-top: 2rem;
+  font-size: 70px;
+  color: map-get($colors, ice);
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: lighten(map-get($colors, lagoon), 20%);
+  transition: all 400ms ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    color: lighten(map-get($colors, lagoon), 20%);
+    background-color: map-get($colors, ice);
+  }
+  @include responsiveTabloids {
+    font-size: 80px;
+  }
+}

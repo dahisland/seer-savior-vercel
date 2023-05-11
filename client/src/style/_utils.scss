@@ -1,0 +1,157 @@
+$colors: (
+  ice: #fff,
+  night: #1a1b1e,
+  darkmouse: #666666,
+  lightmouse: #cccccc,
+  mouse: #999999,
+
+  sea: #0791fd,
+  lagoon: #2b8ca3,
+  darkLagoon: #03667d,
+  rose: #d66e95,
+  mauve: #742062,
+  fire: #fdaa56,
+  blood: #fe4d4f,
+);
+
+@mixin basicFont {
+  font-family: "Averia Serif Libre", cursive;
+}
+@mixin logoFont {
+  font-family: "Rubik Vinyl", cursive;
+}
+@mixin typewriterFont {
+  font-family: "Sono", sans-serif;
+}
+@mixin glutenFont {
+  font-family: "Gluten", cursive;
+}
+
+@mixin resetMargin {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin mainMarginMobile {
+  margin: 0;
+  padding: 10px 5%;
+}
+@mixin mainMarginTabloid {
+  margin: 0;
+  padding: 10px 2%;
+  padding-top: 2rem;
+}
+@mixin mainMarginDesktop {
+  padding-top: 3rem;
+}
+
+@mixin navIcons {
+  width: 20%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding-bottom: 2px;
+}
+
+@mixin responsiveTabloids {
+  @media screen and (min-width: 610px) {
+    @content;
+  }
+}
+
+@mixin responsiveDesktop {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin animGameContentAppear {
+  @keyframes animGameAppear {
+    from {
+      transform: scale(0) translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateX(0%);
+      opacity: 1;
+    }
+  }
+}
+@mixin animGameContentDisappear {
+  @keyframes animGameDisappear {
+    from {
+      transform: scale(1) translateX(0%);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0) translateX(100%);
+      opacity: 0;
+    }
+  }
+}
+
+@mixin animShakeScaleButton {
+  @keyframes shakeScaleButton {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    12% {
+      transform: rotate(10deg);
+    }
+    25% {
+      transform: rotate(0deg);
+    }
+    37% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    63% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(0deg);
+    }
+    87% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: scale(1.1) rotate(0deg);
+    }
+  }
+}
+
+@mixin animShakeButton {
+  @keyframes shakeButton {
+    0% {
+      transform: rotate(0deg);
+    }
+    12% {
+      transform: rotate(10deg);
+    }
+    25% {
+      transform: rotate(0deg);
+    }
+    37% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    63% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(0deg);
+    }
+    87% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+}

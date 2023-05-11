@@ -1,0 +1,68 @@
+@import "../../../style/utils";
+
+@include animGameContentAppear;
+@include animGameContentDisappear;
+
+.gameplayer_noMoreLevels {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-100%);
+  animation: animGameAppear 600ms ease-in-out forwards;
+}
+
+.gameplayer_noMoreLevels--disappear {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(0%);
+  opacity: 1;
+  animation: animGameDisappear 600ms ease-in-out forwards;
+}
+
+.noMoreLevels_title {
+  font-size: 3rem;
+  padding: 0.5rem;
+  color: map-get($colors, ice);
+  @include responsiveTabloids {
+    font-size: 3.5rem;
+  }
+}
+
+.noMoreLevels_advice {
+  cursor: pointer;
+  @include glutenFont;
+  padding: 0.5rem;
+  color: map-get($colors, fire);
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.icon--noMoreLevels {
+  margin-top: 2rem;
+  font-size: 80px;
+  color: map-get($colors, ice);
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: lighten(map-get($colors, lagoon), 20%);
+  transition: all 400ms ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    color: lighten(map-get($colors, lagoon), 20%);
+    background-color: map-get($colors, ice);
+  }
+}

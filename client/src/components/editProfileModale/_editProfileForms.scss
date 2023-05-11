@@ -1,0 +1,140 @@
+@import "../../style/utils";
+
+@include animShakeButton;
+
+.editProfileContent_formContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  padding: 0.5rem 0.5rem 2rem 0.5rem;
+
+  legend {
+    width: 100%;
+    color: map-get($colors, lagoon);
+    @include glutenFont;
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
+  span.editProfileForm_notaBene {
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-style: italic;
+    padding-bottom: 1.5rem;
+  }
+
+  label {
+    padding-bottom: 0.5rem;
+  }
+
+  input[type="submit"] {
+    cursor: pointer;
+    color: map-get($colors, ice);
+    background-color: map-get($colors, lagoon);
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 300ms ease-in-out;
+    &:hover {
+      animation: shakeButton 300ms ease-in-out forwards;
+      outline: 3px solid map-get($colors, fire);
+      background-color: map-get($colors, mauve);
+    }
+  }
+}
+
+.editProfileContent_formContent--grey {
+  background-color: #f0f0f0;
+}
+.editProfileContent_formContent--orange {
+  background-color: lighten(map-get($colors, fire), 20%);
+}
+
+.editProfileForm_inputFieldContainer {
+  width: 100%;
+}
+
+.editProfileForm_inputFieldContent {
+  width: 100%;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editProfile_submit {
+  width: 100%;
+}
+
+.editProfile_input {
+  background-color: lighten(map-get($colors, fire), 0%);
+  border: none;
+  border-radius: 5px;
+  padding: 0.7rem;
+  width: 100%;
+  &:focus {
+    outline: 3px solid map-get($colors, lagoon);
+    &::placeholder {
+      color: map-get($colors, ice);
+      opacity: 0.6;
+    }
+  }
+}
+
+.editProfile_input--lighten {
+  background-color: lighten(map-get($colors, lagoon), 40%);
+  border: none;
+  border-radius: 5px;
+  padding: 0.7rem;
+  width: 100%;
+  &:focus {
+    outline: 3px solid map-get($colors, lagoon);
+    &::placeholder {
+      opacity: 0.6;
+    }
+  }
+}
+
+.customAvatar_preview {
+  border-radius: 10px;
+  position: relative;
+  padding: 0.5rem 2rem;
+  picture {
+    display: block;
+    border: 8px solid map-get($colors, fire);
+    overflow: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+  }
+  .customAvatar_img--opacity {
+    opacity: 0.6;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+  .customAvatar_img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .customAvatar_cancel {
+    cursor: pointer;
+    font-size: 1.7rem;
+    background-color: map-get($colors, ice);
+    position: absolute;
+    bottom: -0.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+}

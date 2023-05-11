@@ -1,0 +1,76 @@
+@import "../../../style/utils";
+
+@include animShakeButton;
+
+.levelGame_intuitionsContainer {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5%;
+  @include responsiveTabloids {
+    height: fit-content;
+    gap: 15%;
+  }
+
+  .intuition_content {
+    cursor: pointer;
+    width: 160px;
+    height: 60px;
+    @include glutenFont;
+    color: map-get($colors, mauve);
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    border: none;
+    background-color: lighten(map-get($colors, fire), 20%);
+    transition: all 300ms ease-in-out;
+    @include responsiveTabloids {
+      height: 80px;
+      font-size: 1.3rem;
+    }
+    @include responsiveDesktop {
+      width: 190px;
+      height: 90px;
+      font-size: 1.5rem;
+    }
+    &:nth-child(1) {
+      &:hover {
+        transform: scale(1.1) rotate(-10deg);
+        background-color: lighten(map-get($colors, lagoon), 20%);
+        outline: 6px solid map-get($colors, ice);
+      }
+    }
+    &:nth-child(2) {
+      &:hover {
+        transform: scale(1.1) rotate(10deg);
+        background-color: lighten(map-get($colors, lagoon), 20%);
+        outline: 6px solid map-get($colors, ice);
+      }
+    }
+  }
+}
+
+.intuition_shuffle {
+  width: 100%;
+  margin-top: 1rem;
+  button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: map-get($colors, mauve);
+    color: map-get($colors, fire);
+    transition: all 300ms ease-in-out;
+    font-size: 0.8rem;
+    &:hover {
+      animation: shakeButton 300ms ease-in-out forwards;
+      outline: 3px solid map-get($colors, fire);
+    }
+    @include responsiveTabloids {
+      font-size: 1rem;
+    }
+  }
+}

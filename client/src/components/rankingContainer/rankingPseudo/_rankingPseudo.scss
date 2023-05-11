@@ -1,0 +1,12 @@
+@import "../../../style/utils";
+
+.rankingItem_pseudo {
+  width: 100%;
+  margin-top: 0.5rem;
+  @include glutenFont;
+  padding: 0.5rem 0.5rem;
+  background-color: lighten(map-get($colors, lagoon), 20%);
+  color: map-get($colors, ice);
+  border-radius: 7px;
+  text-align: left;
+}

@@ -1,0 +1,25 @@
+@import "../../../style/utils";
+
+figure.avatar_unlocked {
+  position: relative;
+  cursor: pointer;
+
+  img {
+    padding: 16px;
+  }
+  figcaption {
+    color: map-get($colors, fire);
+  }
+}
+
+figure.avatar_unlocked--selected {
+  background-color: map-get($colors, lagoon);
+  cursor: pointer;
+
+  img {
+    padding: 16px;
+  }
+  figcaption {
+    color: map-get($colors, ice);
+  }
+}

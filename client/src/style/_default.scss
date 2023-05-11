@@ -1,0 +1,108 @@
+@import "./utils";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  @include basicFont;
+  font-size: 16px;
+}
+button,
+input {
+  @include glutenFont;
+  text-align: center;
+  font-size: 1rem;
+  color: map-get($colors, lagoon);
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li {
+  @include resetMargin;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+body {
+  position: relative;
+  background: linear-gradient(#232427, #1e5f6e);
+}
+
+.page-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  color: map-get($colors, ice);
+  main {
+    @include mainMarginMobile;
+    flex-grow: 1;
+    color: map-get($colors, darkLagoon);
+    position: relative;
+    @include responsiveTabloids {
+      @include mainMarginTabloid;
+    }
+    @include responsiveDesktop {
+      @include mainMarginDesktop;
+    }
+    h1 {
+      position: relative;
+      width: 100%;
+      @include glutenFont;
+      color: lighten(map-get($colors, lagoon), 20%);
+      margin-bottom: 1.5rem;
+      @include responsiveTabloids {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.errors-messages {
+  @include basicFont;
+  min-height: 17px;
+  color: map-get($colors, blood);
+  font-size: 13px;
+  font-style: italic;
+}
+.success-messages {
+  @include basicFont;
+  min-height: 17px;
+  color: map-get($colors, green);
+  font-size: 13px;
+  font-style: italic;
+}
+
+footer {
+  padding: 10px;
+  margin-top: 2rem;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

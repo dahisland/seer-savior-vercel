@@ -1,0 +1,52 @@
+@import "./default";
+@import "../components/backgroundAnim/backgroundAnim";
+
+// Pages
+@import "../pages/homepage/homepage";
+@import "../pages/ranking/ranking";
+@import "../pages/avatars/avatars";
+@import "../pages/error404/error404";
+
+// Header
+@import "../components/header/header";
+@import "../components/header/logoHeader/logoHeader";
+@import "../components/header/profileHeader/profileHeader";
+@import "../components/header/navBurgerIcon/navBurgerIcon";
+@import "../components/header/navHeader/navHeader";
+
+// Footer
+@import "../components/footer/footer";
+
+// Login/Signup modale Components
+@import "../components/logModale/logModale";
+@import "../components/logModale/logModaleForms";
+
+// Edit profile modale Components
+@import "../components/editProfileModale/editProfileModale";
+@import "../components/editProfileModale/editProfileForms";
+@import "../components/editProfileModale/deleteAccount/deleteAccount";
+
+// Game Components
+@import "../components/gameplayer/gameplayerContainer";
+@import "../components/gameplayer/pregame/pregame";
+@import "../components/gameplayer/gameRules/gameRules";
+@import "../components/gameplayer/levelHeader/levelHeader";
+@import "../components/gameplayer/levelIntro/levelIntro";
+@import "../components/gameplayer/levelGame/levelGame";
+@import "../components/gameplayer/levelGame/clueContainer";
+@import "../components/gameplayer/levelGame/intuitionsContainer";
+@import "../components/gameplayer/levelFail/levelFail";
+@import "../components/gameplayer/levelGame/submitIntuition";
+@import "../components/gameplayer/levelWin/levelWin";
+@import "../components/gameplayer/noMoreLevels/noMoreLevels";
+@import "../components/gameplayer/chooseLevel/chooseLevel";
+
+// Avatars components
+@import "../components/avatarsContainer/avatarsContainer";
+@import "../components/avatarsContainer/avatarLocked/avatarLocked";
+@import "../components/avatarsContainer/avatarUnlocked/avatarUnlocked";
+
+// Ranking components
+@import "../components/rankingContainer/rankingContainer";
+@import "../components/rankingContainer/rankingScore/rankingScore";
+@import "../components/rankingContainer/rankingPseudo/rankingPseudo";

@@ -1,0 +1,84 @@
+@import "../../style/utils";
+
+.avatars_list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  figure {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    border: 5px solid transparent;
+    padding: 0.5rem;
+  }
+  picture {
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+  }
+  img {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+  figcaption {
+    @include logoFont;
+    font-weight: 700;
+  }
+  @include responsiveTabloids {
+    gap: 10%;
+  }
+  @include responsiveDesktop {
+    gap: 5%;
+  }
+}
+
+.avatarsList_item {
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  span.select_avatar {
+    display: none;
+  }
+  &:hover {
+    span.select_avatar {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      background-color: rgba(116, 32, 98, 0.8);
+      @include glutenFont;
+      color: map-get($colors, ice);
+      font-size: 1.5rem;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      padding: 1rem 2rem;
+    }
+  }
+  @include responsiveTabloids {
+    width: 45%;
+  }
+  @include responsiveDesktop {
+    width: 30%;
+  }
+}
+
+.avatars_notConnected {
+  color: map-get($colors, fire);
+  @include glutenFont;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}

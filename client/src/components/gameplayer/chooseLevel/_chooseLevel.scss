@@ -1,0 +1,87 @@
+@import "../../../style/utils";
+
+@include animGameContentAppear;
+@include animGameContentDisappear;
+@include animShakeScaleButton;
+
+.gameplayer_chooseLevel {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-100%);
+  animation: animGameAppear 600ms ease-in-out forwards;
+}
+
+.gameplayer_chooseLevel--disappear {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(0%);
+  opacity: 1;
+  animation: animGameDisappear 600ms ease-in-out forwards;
+}
+
+.chooseLevel_content {
+  justify-content: space-around;
+  h2 {
+    font-size: 2rem;
+    @include logoFont;
+    color: map-get($colors, fire);
+    text-decoration: underline;
+  }
+
+  .chooseLevel_levels {
+    width: 100%;
+    background-color: rgba(43, 140, 163, 0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .chooseLevel_item {
+    @include glutenFont;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    margin: 1rem 0;
+    border: 4px solid map-get($colors, fire);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: map-get($colors, mauve);
+    transition: all 300ms ease-in-out;
+    @include responsiveTabloids {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  .chooseLevel_item--disabled {
+    opacity: 0.5;
+  }
+
+  .chooseLevel_item--available {
+    cursor: pointer;
+    &:hover {
+      animation: shakeScaleButton 300ms ease-in-out forwards;
+      outline: 5px solid map-get($colors, ice);
+      border: 4px solid transparent;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import "../../../style/utils";
+
+figure.avatar_locked {
+  picture {
+    opacity: 0.5;
+  }
+  img {
+    padding: 16px;
+  }
+  figcaption {
+    font-weight: 400;
+    @include typewriterFont;
+    color: map-get($colors, ice);
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,16 @@
+@import "../../style/utils";
+
+footer {
+  .footer_copyrights {
+    @include typewriterFont;
+    p {
+      display: inline;
+    }
+    a {
+      color: map-get($colors, fire);
+      &:hover {
+        color: lighten(map-get($colors, lagoon), 20%);
+      }
+    }
+  }
+}

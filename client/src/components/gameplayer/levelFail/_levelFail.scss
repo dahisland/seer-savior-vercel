@@ -1,0 +1,66 @@
+@import "../../../style/utils";
+
+@include animGameContentAppear;
+@include animGameContentDisappear;
+
+.gameplayer_levelFail {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-100%);
+  background-image: url("../../../assets/dont-cross.png");
+  background-size: cover;
+  background-position: top;
+  animation: animGameAppear 600ms ease-in-out forwards;
+}
+
+.gameplayer_levelFail--disappear {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(0%);
+  opacity: 1;
+  background-image: url("../../../assets/dont-cross.png");
+  background-size: cover;
+  background-position: top;
+  animation: animGameDisappear 600ms ease-in-out forwards;
+}
+
+.levelFail_content {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: space-around;
+  border-radius: 10px;
+  h2 {
+    font-size: 2rem;
+    @include logoFont;
+    color: map-get($colors, ice);
+    text-decoration: underline;
+    @include responsiveTabloids {
+      font-size: 3rem;
+    }
+  }
+
+  .levelFail_text {
+    width: 100%;
+    background-color: map-get($colors, mauve);
+    border-radius: 10px;
+    @include responsiveTabloids {
+      width: 80%;
+    }
+    @include responsiveDesktop {
+      width: 70%;
+    }
+  }
+}

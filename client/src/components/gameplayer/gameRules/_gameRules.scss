@@ -1,0 +1,45 @@
+@import "../../../style/utils";
+
+@include animGameContentAppear;
+@include animGameContentDisappear;
+
+.gameplayer_rules {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-100%);
+  animation: animGameAppear 600ms ease-in-out forwards;
+}
+
+.gameplayer_rules--disappear {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(0%);
+  opacity: 1;
+  animation: animGameDisappear 600ms ease-in-out forwards;
+}
+
+.gameRules_content {
+  h2 {
+    font-size: 2rem;
+    @include logoFont;
+    color: map-get($colors, fire);
+    text-decoration: underline;
+  }
+  .gameRules_text {
+    background-color: map-get($colors, mauve);
+    border-radius: 10px;
+  }
+}

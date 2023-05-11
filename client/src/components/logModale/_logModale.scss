@@ -1,0 +1,45 @@
+@import "../../style/utils";
+
+#logModale_innerContainer {
+  width: 100%;
+  background-color: map-get($colors, ice);
+  border: 10px solid map-get($colors, fire);
+  overflow-y: auto;
+  padding: 3rem 1.5rem 2.5rem 1.5rem;
+
+  @include responsiveTabloids {
+    width: 60%;
+  }
+  @include responsiveDesktop {
+    width: 450px;
+  }
+}
+
+#logModale_header {
+  flex-wrap: wrap;
+  left: 1rem;
+  right: 1rem;
+
+  #logModale_title {
+    color: map-get($colors, fire);
+    @include logoFont;
+    font-size: 2.2rem;
+  }
+
+  #logModale_icon {
+    background-color: transparent;
+    color: map-get($colors, fire);
+    font-size: 2rem;
+    height: 32px;
+    padding: 0px;
+    transition: all 300ms ease-in-out;
+    &:hover {
+      color: map-get($colors, lagoon);
+    }
+  }
+}
+
+#logModale_content {
+  margin-top: 2rem;
+  color: map-get($colors, lagoon);
+}

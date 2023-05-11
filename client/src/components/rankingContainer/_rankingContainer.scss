@@ -1,0 +1,55 @@
+@import "../../style/utils";
+
+.ranking_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2%;
+}
+
+.ranking_item {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: map-get($colors, fire);
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  @include responsiveTabloids {
+    width: 49%;
+  }
+  @include responsiveDesktop {
+    width: 32%;
+  }
+}
+
+.rankingItem_level {
+  width: 50%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include logoFont;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: map-get($colors, mauve);
+}
+
+.rankingItem_icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  bottom: 0px;
+  right: 0rem;
+  font-size: 2.8rem;
+  background-color: lighten(map-get($colors, fire), 0%);
+  border-radius: 50%;
+}

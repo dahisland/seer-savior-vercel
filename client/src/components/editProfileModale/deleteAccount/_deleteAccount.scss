@@ -1,0 +1,75 @@
+@import "../../../style/utils";
+
+@include animShakeButton;
+@keyframes appearDeleteAccount {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.editProfileContent_deleteAccount {
+  width: 100%;
+  .deleteAccount_text {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      cursor: pointer;
+      @include glutenFont;
+      color: map-get($colors, blood);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      transition: all 300ms ease-in-out;
+      &:hover {
+        text-decoration: underline;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.editProfileContent_confirmDelete {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border: 3px solid map-get($colors, blood);
+  border-radius: 10px;
+  animation: appearDeleteAccount 300ms ease-in-out forwards;
+  background-color: map-get($colors, blood);
+  color: map-get($colors, ice);
+}
+
+.confirmDelete_buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  button {
+    cursor: pointer;
+    margin-top: 1rem;
+    background-color: map-get($colors, blood);
+    color: map-get($colors, ice);
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    font-size: 1.2rem;
+    transition: all 300ms ease-in-out;
+    border: 5px solid map-get($colors, ice);
+    &:hover {
+      animation: shakeButton 300ms ease-in-out forwards;
+      border: 5px solid map-get($colors, fire);
+      background-color: map-get($colors, ice);
+      color: map-get($colors, blood);
+    }
+  }
+}

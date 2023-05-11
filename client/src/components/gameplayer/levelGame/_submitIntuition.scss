@@ -1,0 +1,144 @@
+@import "../../../style/utils";
+
+.levelGame_submitIntuition {
+  width: 100%;
+  text-align: left;
+  // border-top: 5px solid lighten(map-get($colors, lagoon), 20%);
+  border-left: 5px solid lighten(map-get($colors, lagoon), 20%);
+  border-right: 5px solid lighten(map-get($colors, lagoon), 20%);
+  background-color: rgba(95, 190, 213, 0.5);
+  border-radius: 5px;
+  padding: 0.5rem;
+  padding-bottom: 0.1rem;
+  margin-bottom: 0.5rem;
+
+  @include responsiveTabloids {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.submitIntuition_title {
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: lighten(map-get($colors, ice), 0%);
+  @include logoFont;
+  @include responsiveTabloids {
+    text-align: left;
+    margin-bottom: inherit;
+  }
+}
+
+form.submitIntuition_form {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+  padding-bottom: 0.5rem;
+  @include responsiveTabloids {
+    gap: 2rem;
+    height: 65px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.submitIntuition_field {
+  width: 95%;
+
+  .intuitionField_inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem;
+    @include glutenFont;
+    color: map-get($colors, darkmouse);
+
+    input {
+      padding: 0.4rem 0.3rem;
+      border-radius: 5px;
+      background: transparent;
+      color: map-get($colors, lagoon);
+      &::placeholder {
+        font-size: 0.8rem;
+        color: map-get($colors, darkmouse);
+        font-style: italic;
+      }
+      &:focus {
+        border: none;
+        outline: none;
+        background-color: map-get($colors, fire);
+      }
+    }
+    input.submitIntuition_input--unique {
+      border: none;
+      // background: none;
+      width: 100%;
+    }
+    input.submitIntuition_input {
+      border: none;
+      // background: none;
+      width: 45%;
+    }
+  }
+}
+
+@keyframes animBtnCall {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  12% {
+    transform: rotate(50deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  37% {
+    transform: rotate(-50deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  63% {
+    transform: rotate(50deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  87% {
+    transform: rotate(-50deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(0deg);
+  }
+}
+
+.submitIntuition--button {
+  cursor: pointer;
+  @include logoFont;
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  transition: all 400ms ease-in-out;
+  font-size: 0.8rem;
+  &:hover {
+    color: map-get($colors, ice);
+    background-color: lighten(map-get($colors, lagoon), 20%);
+    outline: 3px solid lighten(map-get($colors, ice), 0%);
+    animation: animBtnCall 400ms ease-in-out forwards;
+  }
+  @include responsiveTabloids {
+    padding: 0.8rem;
+    font-size: 1rem;
+    &:hover {
+      outline: 5px solid lighten(map-get($colors, ice), 0%);
+    }
+  }
+}

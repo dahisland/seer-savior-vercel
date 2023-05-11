@@ -1,0 +1,19 @@
+@import "../../../style/utils";
+
+// First element
+.header_iconNav {
+  cursor: pointer;
+  z-index: 201;
+  order: 1;
+  width: 20%;
+  height: 100%;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: map-get($colors, ice);
+  @include responsiveTabloids {
+    display: none;
+  }
+}

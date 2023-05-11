@@ -1,0 +1,69 @@
+@import "../../../style/utils";
+
+.header_profile {
+  cursor: pointer;
+  order: 3;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms ease-in-out;
+  picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+  }
+  picture.avatar_notConnected {
+    opacity: 1;
+  }
+  img {
+    object-fit: contain;
+    width: 100%;
+  }
+  p {
+    display: none;
+    transition: all 300ms ease-in-out;
+    margin-top: 0.2rem;
+  }
+  .iconProfile--notConnected {
+    font-size: 40px;
+  }
+
+  &:hover {
+    picture {
+      transform: rotate(360deg);
+    }
+    picture.avatar_notConnected {
+      opacity: 1;
+    }
+  }
+
+  @include responsiveTabloids {
+    order: 3;
+    width: 20%;
+    p {
+      @include glutenFont;
+      color: map-get($colors, fire);
+      display: block;
+      padding-top: 0.4rem;
+    }
+    .iconProfile--notConnected {
+      font-size: 90px;
+    }
+    &:hover {
+      picture {
+        transform: rotate(360deg) scale(1.1);
+      }
+      p {
+        color: lighten(map-get($colors, lagoon), 0%);
+      }
+    }
+  }
+}
